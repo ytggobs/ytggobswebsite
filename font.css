@@ -1,0 +1,8 @@
+/* latin */
+@font-face {
+  font-family: 'funkin';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://raw.githubusercontent.com/GuiGui-OfficielYT/BoB-Not-Bob/site/funkin2.ttf) format('ttf');
+  unicode-range: U+26, U+2D, U+2F, U+3C, U+3E, U+40, U+5B, U+5C, U+5D, U+5F, U+61, U+62, U+63, U+64, U+65, U+66, U+67, U+68, U+69, U+6A, U+6B, U+6C, U+6D, U+6E, U+6F, U+70, U+71, U+72, U+73, U+74, U+75, U+76, U+77, U+78, U+79, U+7A, U+41, U+42, U+43, U+44, U+45, U+46, U+47, U+48, U+49, U+4A, U+4B, U+4D, U+4E, U+4F, U+50, U+51, U+52, U+53, U+54, U+55, U+56, U+57, U+58, U+59, U+5A;
+}
