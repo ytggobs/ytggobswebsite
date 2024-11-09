@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <title>Redirect</title>
     <script>
         // Function to get query parameter value
         function getQueryParameter(name) {
@@ -18,8 +18,13 @@
             
             // If the 'redirect' parameter is present
             if (redirectValue) {
-                // Redirect to the desired Brawl Stars URL
+                // Redirect to the Brawl Stars custom URL scheme
                 window.location.href = 'brawlstars://' + redirectValue;
+                
+                // Wait for 2 seconds before redirecting to Discord
+                setTimeout(function() {
+                    window.location.href = "discord://";
+                }, 2000); // Adjust the timeout value if needed
             } else {
                 console.log('No redirect parameter found.');
             }
