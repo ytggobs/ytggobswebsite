@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // Function to get query parameter value
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Wait for the page to load
+        window.onload = function() {
+            // Get the 'redirect' query parameter
+            const redirectValue = getQueryParameter('redirect');
+            
+            // If the 'redirect' parameter is present
+            if (redirectValue) {
+                // Redirect to the desired Brawl Stars URL
+                window.location.href = 'brawlstars://' + redirectValue;
+            } else {
+                console.log('No redirect parameter found.');
+            }
+        };
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
