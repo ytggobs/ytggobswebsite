@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawl Stars Room Tag Generator</title>
+</head>
+<body>
+    <h2>Brawl Stars Room Tag Generator</h2>
+
+    <!-- Input form for base tag and allowed characters -->
+    <label for="tag">Base Tag:</label>
+    <input type="text" id="tag" placeholder="e.g., XU53RFPE" maxlength="8">
+
+    <label for="allowedChars">Allowed Characters (Last Character):</label>
+    <input type="text" id="allowedChars" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" placeholder="e.g., ABC123">
+
+    <button onclick="generateLinksAndQRCodes()">Generate Links and QR Codes</button>
+
+    <div id="results"></div>
+    <div id="qrNavigation" style="display: none;">
+        <button onclick="prevQRCode()">Previous</button>
+        <button onclick="nextQRCode()">Next</button>
+    </div>
+
+    <script>
+        let qrCodes = [];  // Array to hold generated QR codes and links
+        let currentIndex = 0;  // To keep track of current QR code being displayed
+
+        // Function to generate links and QR codes based on modified last character of the tag
+        function generateLinksAndQRCodes() {
+            const baseTag = document.getElementById("tag").value;
+            const allowedChars = document.getElementById("allowedChars").value;
+            const resultsDiv = document.getElementById("results");
+
+            if (baseTag.length === 0) {
+                alert("Please enter a valid tag.");
+                return;
+            }
+
+            // Remove the last character of the tag
+            const baseTagWithoutLastChar = baseTag.slice(0, -1);
+
+            // Clear previous results and reset the QR codes array
+            resultsDiv.innerHTML = "";
+            qrCodes = [];
+            currentIndex = 0;
+
+            // Generate new links and QR codes
+            for (let char of allowedChars) {
+                const newTag = baseTagWithoutLastChar + char;
+                const link = `https://link.brawlstars.com/invite/gameroom/en?tag=${newTag}`;
+                const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(link)}&size=150x150`;
+                
+                // Store the link and QR code in the array
+                qrCodes.push({ link, qrCodeUrl });
+            }
+
+            // Clear input fields after generating QR codes
+            document.getElementById("tag").value = "";
+
+            // Display the first QR code
+            showQRCode(currentIndex);
+
+            // Show navigation buttons
+            document.getElementById("qrNavigation").style.display = "block";
+        }
+
+        // Function to display QR code at a given index
+        function showQRCode(index) {
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = "";  // Clear previous QR code
+
+            const qrData = qrCodes[index];
+            const linkDiv = document.createElement("div");
+            linkDiv.innerHTML = `<p>Link with tag: <a href="${qrData.link}" target="_blank">${qrData.link}</a></p>`;
+            
+            const qrImg = document.createElement("img");
+            qrImg.src = qrData.qrCodeUrl;
+            qrImg.alt = `QR Code for ${qrData.link}`;
+            
+            linkDiv.appendChild(qrImg);
+            resultsDiv.appendChild(linkDiv);
+        }
+
+        // Function to go to the next QR code
+        function nextQRCode() {
+            if (currentIndex < qrCodes.length - 1) {
+                currentIndex++;
+                showQRCode(currentIndex);
+            }
+        }
+
+        // Function to go to the previous QR code
+        function prevQRCode() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showQRCode(currentIndex);
+            }
+        }
+    </script>
+</body>
+</html>
