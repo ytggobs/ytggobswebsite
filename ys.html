@@ -44,7 +44,7 @@ image-rendering: pixelated;
         const splited = string.split(" ");
         for (let i = 0; i < splited.length; i++) {
             const img = document.createElement('img');
-            img.src = splited[i] + ".png";
+            img.src = "/ys/" + splited[i] + ".png";
             img.width = 50
             const result = img.src
             container.appendChild(img);
