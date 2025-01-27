@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>romanized yoshispeak beta to yoshispeak beta</title>
+    <style>
+        body{
+image-rendering: pixelated;
+        }
+        footer{
+            text-align: center;
+        }
+        img{
+            margin-right: 0.25%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Work In Progress</h1>
+    <div>
+    <p>sp = Space</p>
+    <img src="sp.png" width="25">
+    <p>un = Untranslabe</p>
+    <img src="un.png" width="25">
+    <p>dot = Dot (omg no way)</p>
+    <img src="dot.png" width="25">
+    <p>qm = Question Mark</p>
+    <img src="qm.png" width="25">
+    <p>em = Exclamation Mark</p>
+    <img src="em.png" width="25">
+    <p>ap = Apostrophe</p>
+    <img src="ap.png" width="25">
+
+</div>
+    <textarea placeholder="yoshispeak" id="text"></textarea>
+    <br>
+    <button onclick="convert()">Convert</button>
+    <script>
+        function convert() {
+        const container = document.getElementById('result');
+        if (container.hasChildNodes()) {
+        container.innerHTML = '';
+        }
+        const string = document.getElementById("text").value;
+        const splited = string.split(" ");
+        for (let i = 0; i < splited.length; i++) {
+            const img = document.createElement('img');
+            img.src = splited[i] + ".png";
+            img.width = 50
+            const result = img.src
+            container.appendChild(img);
+            }
+    }
+    </script>
+    <p>Yoshiàdo:</p>
+    <div id="result" class="result">
+    </div>
+</body>
+<footer><img src="à.png" width="25"><img src="do.png" width="25"><img src="ap.png" width="25"><img src="j.png" width="25"><img src="o.png" width="25"><img src="z.png" width="25"><img src="h.png" width="25"><img src="sp.png" width="25"><img src="è.png" width="25"><img src="z.png" width="25"><img src="sp.png" width="25"><img src="j.png" width="25"><img src="a.png" width="25"><img src="z.png" width="25"><img src="bu.png" width="25"><img src="shi.png" width="25"></footer>
+</html>
