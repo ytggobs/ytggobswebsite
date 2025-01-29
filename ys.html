@@ -25,17 +25,17 @@ image-rendering: pixelated;
     <h1>Work In Progress</h1>
     <div>
     <p>sp = Space</p>
-    <img src="/ys/sp.png" width="25">
+    <img src="ys/sp.png" width="25">
     <p>un = Untranslabe</p>
-    <img src="/ys/un.png" width="25">
+    <img src="ys/un.png" width="25">
     <p>dot = Dot (omg no way)</p>
-    <img src="/ys/dot.png" width="25">
+    <img src="ys/dot.png" width="25">
     <p>qm = Question Mark</p>
-    <img src="/ys/qm.png" width="25">
+    <img src="ys/qm.png" width="25">
     <p>em = Exclamation Mark</p>
-    <img src="/ys/em.png" width="25">
+    <img src="ys/em.png" width="25">
     <p>ap = Apostrophe</p>
-    <img src="/ys/ap.png" width="25">
+    <img src="ys/ap.png" width="25">
 
 </div>
     <textarea placeholder="yoshispeak" id="text"></textarea>
@@ -51,7 +51,7 @@ image-rendering: pixelated;
         const splited = string.split(" ");
         for (let i = 0; i < splited.length; i++) {
             const img = document.createElement('img');
-            img.src = "/ys/" + splited[i] + ".png";
+            img.src = "ys/" + splited[i] + ".png";
             img.width = 50
             const result = img.src
             container.appendChild(img);
