@@ -13,6 +13,9 @@ image-rendering: pixelated;
         img{
             margin-right: 0.25%;
         }
+        #result { 
+            background-color: gray;
+        }
     </style>
 </head>
 <body>
@@ -26,45 +29,66 @@ image-rendering: pixelated;
     <h1>Work In Progress</h1>
     <div>
     <p>sp = Space</p>
-    <img src="ys/sp.png" width="25">
+    <img src="ya/sp.png" width="25">
     <p>un = Untranslable</p>
-    <img src="ys/un.png" width="25">
+    <img src="ya/un.png" width="25">
     <p>dot = Dot (omg no way)</p>
-    <img src="ys/dot.png" width="25">
+    <img src="ya/dot.png" width="25">
     <p>qm = Question Mark</p>
-    <img src="ys/qm.png" width="25">
+    <img src="ya/qm.png" width="25">
     <p>em = Exclamation Mark</p>
-    <img src="ys/em.png" width="25">
+    <img src="ya/em.png" width="25">
     <p>ap = Apostrophe</p>
-    <img src="ys/ap.png" width="25">
+    <img src="ya/ap.png" width="25">
 
 </div>
     <textarea placeholder="yoshispeak" id="text"></textarea>
     <br>
-    <button onclick="convert()">Convert</button>
     <script>
+        const TOKENS = [!, ', a, ae, ahh, ap, bal1, bal2, bal3, bal4, bbl, bu, da, dae, de, do, dot, dæ, e, em, f, fa, gya, gyu, h, ha, hom, i, j, k, ka, ke, l, m, n, o, ohh, oup, pu, qm, r, s, shi, sp, t, un, yee, yoshi, z, zh, à, æ, è, ô, ā, ē];
+        const TOKENS_SORTED = TOKENS.slice().sort((a, b) => b.length - a.length);
         function convert() {
         const container = document.getElementById('result');
-        if (container.hasChildNodes()) {
         container.innerHTML = '';
-        }
-        const string = document.getElementById("text").value;
-        const splited = string.split(" ");
-        for (let i = 0; i < splited.length; i++) {
+        const syr = document.getElementById("text").value.trim;
+        if (!str) return;
+
+        let i = 0
+        while (i < str.length) {
+            let matched = null;
+            for (const token of TOKENS_SORTED)
+                const substr = str.substring(i, i + token.length);
+                if (substr.toLowerCase() === token.toLowerCase()) {
+                    matched = token;
+                    break;
+                  }
+                }
+          if (matched {
             const img = document.createElement('img');
-            img.src = "ys/" + splited[i] + ".png";
+            img.src = "ys/" + encodeURIComponent(matched) + ".png";
             img.width = 50
+            img.alt = matched;
             const result = img.src
             container.appendChild(img);
+            i += matched.length;
+          } else {
+              const h2 document.createElement("h2");
+              h2.className = 'unknown'
+              h2.textContent = str[i]
+              container.appendChild(h2);
+              i += 1;
             }
     }
+    document.addEventListener('DOMContentLoaded', () => {
+      const textarea = document.getElementById('text');
+      textarea.addEventListener('input', convert, { passive: true });
+      convert();
+    });
     </script>
-    <p>Yoshiàdo:</p>
+    <p>Yoshādo:</p>
     <div id="result" class="result">
     </div>
-    <a href="https://github.com/ytggobs/ytggobswebsite/raw/refs/heads/master/yb/ya3.0.ttf">Font available to download</a>
+    <a href="https://github.com/ytggobs/ytggobswebsite/raw/refs/heads/master/yb/ya3.0.ttf">Font available to download</a> <a href="https://benpa.ng/bited/">(maded with bited)</a>
 </body>
 <footer><a href="https://sites.google.com/view/yoshilingo">Credit: Yoshilingo</a></footer>
 </html>
-
-
