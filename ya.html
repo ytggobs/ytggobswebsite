@@ -41,13 +41,21 @@ image-rendering: pixelated;
 </div>
     <textarea placeholder="yoshiādo" id="text"></textarea>
     <br>
-    <script>
+    <p>Yoshādo:</p>
+    <div id="result" class="result">
+    </div>
+     <script>
         const TOKENS = [ "!", "'", "a", "ae", "ahh", "ap", "bal1", "bal2", "bal3", "bal4", "bbl", "bu", "da", "dae", "de", "do", "dot", "dæ", "e", "em", "f", "fa", "gya", "gyu", "h", "ha", "hom", "i", "j", "k", "ka", "ke", "l", "m", "n", "o", "ohh", "oup", "pu", "qm", "r", "s", "shi", "sp", "t", "un", "yee", "yoshi", "z", "zh", "à", "æ", "è", "ô", "ā", "ē"];
         const TOKENS_SORTED = TOKENS.slice().sort((a, b) => b.length - a.length);
+        document.addEventListener('DOMContentLoaded', () => {
+              const textarea = document.getElementById('text');
+              textarea.addEventListener('input', convert, { passive: true });
+              convert();
+        });
         function convert() {
         const container = document.getElementById('result');
         container.innerHTML = '';
-        const str = document.getElementById("text").value.trim;
+        const str = document.getElementById("text").value.trim();
         if (!str) return;
 
         let i = 0
@@ -63,33 +71,26 @@ image-rendering: pixelated;
           if (matched) {
             const img = document.createElement('img');
             img.src = "ys/" + encodeURIComponent(matched) + ".png";
-            img.width = 50
+            img.width = 50;
             img.alt = matched;
-            const result = img.src
+            const result = img.src;
             container.appendChild(img);
             i += matched.length;
           } else {
               const h2 = document.createElement("h2");
-              h2.className = 'unknown'
-              h2.textContent = str[i]
+              h2.className = 'unknown';
+              h2.textContent = str[i];
               container.appendChild(h2);
               i += 1;
             }
         }
     }
-    document.addEventListener('DOMContentLoaded', () => {
-      const textarea = document.getElementById('text');
-      textarea.addEventListener('input', convert, { passive: true });
-      convert();
-    });
     </script>
-    <p>Yoshādo:</p>
-    <div id="result" class="result">
-    </div>
     <a href="https://github.com/ytggobs/ytggobswebsite/raw/refs/heads/master/yb/ya3.0.ttf">Font available to download</a> <a href="https://benpa.ng/bited/">(maded with bited)</a>
 </body>
 <footer><a href="https://sites.google.com/view/yoshilingo">Credit: Yoshilingo</a></footer>
 </html>
+
 
 
 
