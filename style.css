@@ -1,4 +1,6 @@
+@import url(https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css)
 body {
+    font-family: Hack, monospace;
     background-color: #222;
     h1, h2, h3, h4, h5, h6, p {
         color: #ddd;
