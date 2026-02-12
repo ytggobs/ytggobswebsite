@@ -45,7 +45,7 @@ image-rendering: pixelated;
     <textarea placeholder="yoshispeak" id="text"></textarea>
     <br>
     <script>
-        const TOKENS = [!, ', a, ae, ahh, ap, bal1, bal2, bal3, bal4, bbl, bu, da, dae, de, do, dot, dæ, e, em, f, fa, gya, gyu, h, ha, hom, i, j, k, ka, ke, l, m, n, o, ohh, oup, pu, qm, r, s, shi, sp, t, un, yee, yoshi, z, zh, à, æ, è, ô, ā, ē];
+        const TOKENS = [  "!", "'", "a", "ae", "ahh", "ap", "bal1", "bal2", "bal3", "bal4", "bbl", "bu", "da", "dae", "de", "do", "dot", "dæ", "e", "em", "f", "fa", "gya", "gyu", "h", "ha", "hom", "i", "j", "k", "ka", "ke", "l", "m", "n", "o", "ohh", "oup", "pu", "qm", "r", "s", "shi", "sp", "t", "un", "yee", "yoshi", "z", "zh", "à", "æ", "è", "ô", "ā", "ē"];
         const TOKENS_SORTED = TOKENS.slice().sort((a, b) => b.length - a.length);
         function convert() {
         const container = document.getElementById('result');
@@ -92,4 +92,5 @@ image-rendering: pixelated;
 </body>
 <footer><a href="https://sites.google.com/view/yoshilingo">Credit: Yoshilingo</a></footer>
 </html>
+
 
