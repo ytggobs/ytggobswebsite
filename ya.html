@@ -5,14 +5,41 @@
     <title>Romanized Yoshiādo Beta to Yoshiādo Beta</title>
     <style>
         body{
-image-rendering: pixelated;
+        image-rendering: pixelated;
         }
         footer{
-            text-align: center;
+        position: fixed;
+        bottom: 2em;
+        width: 100%;
+        text-align: center;
         }
-        img{
-            margin-right: 0.25%;
-            background-color: gray;
+        #result, ul > li > img{
+        background-color: gray;
+        }
+        #result > img{
+        margin-right: 8px;
+        }
+        #result{
+          width: 50%
+        }
+        ul > li{
+        margin-right: 1%;
+        }
+        .content{
+        margin-left: 10%;
+        }
+        .download{
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        bottom: 5em;
+        left: 0;
+        }
+        .alphabet{
+          display: block;
+          right: 10%;
+          image-rendering: auto;
+          position: absolute;
         }
     </style>
 </head>
@@ -24,26 +51,24 @@ image-rendering: pixelated;
         <li><a href="ya.html">Romanized YĀ to Yoshiādo</a></li>
     </ul>
     </header>
-    <div>
-    <p>un = Untranslable</p>
-    <img src="ys/un.png" width="25">
-    <p>dot = Dot (omg no way)</p>
-    <img src="ys/dot.png" width="25">
-    <p>qm = Question Mark</p>
-    <img src="ys/qm.png" width="25">
-    <p>em = Exclamation Mark</p>
-    <img src="ys/em.png" width="25">
-    <p>ap = Apostrophe</p>
-    <img src="ys/ap.png" width="25">
-
-</div>
+    <div class="content">
+    <ul>
+    <li><p>un = </p><p>Untranslable</p>
+    <img src="ys/un.png" width="64"></li>
+    <li><p>qm = </p><p>Question Mark</p>
+    <img src="ys/qm.png" width="64"></li>
+    <li><p>-- = </p><p>Short Pause</p>
+    <img src="ys/--.png" width="64"></li>
+    </ul>
+    <img class="alphabet" width="25%" src="https://lh3.googleusercontent.com/sitesv/APaQ0SQdUgR2hxG16ZFoQ2nJfMMoL34hdi47NRJcVeqX78fVKWtUn3pxXULDDwd49BB1TRKPWqPdTLY5tNXx7or_lVG0H8AcdlFloujBDIzhdkeP25nIgN1skPsKZGgh3u_WPqxftkQ3M7hcUdxgukCRGMnWSBtFXYJUiu7WX8NQXzEmNuAgPqsYaHwN=w1280">
     <textarea placeholder="yoshiādo" id="text"></textarea>
     <br>
     <p>Yoshādo:</p>
     <div id="result" class="result">
     </div>
+    </div>
      <script>
-        const TOKENS = [ "!", "'", "a", "ae", "ahh", "ap", "bal1", "bal2", "bal3", "bal4", "bbl", "bu", "da", "dae", "de", "do", "dot", "dæ", "e", "em", "f", "fa", "gya", "gyu", "h", "ha", "hom", "i", "j", "k", "ka", "ke", "l", "m", "n", "o", "ohh", "oup", "pu", "qm", "r", "s", "shi", " ", "t", "un", "yee", "yoshi", "z", "zh", "à", "æ", "è", "ô", "ā", "ē"];
+        const TOKENS = [ "!", "'", "a", "ahh", "ap", "bal1", "bal2", "bal3", "bal4", "--", "bu", "da", "dae", "de", "do", ".", "dæ", "e", "em", "f", "fa", "gya", "gyu", "h", "ha", "hom", "i", "j", "k", "ka", "ke", "l", "m", "n", "o", "ohh", "oup", "pu", "qm", "r", "s", "shi", " ", "t", "un", "yee", "yoshi", "z", "zh", "à", "æ", "è", "ô", "ā", "ē"];
         const TOKENS_SORTED = TOKENS.slice().sort((a, b) => b.length - a.length);
         document.addEventListener('DOMContentLoaded', () => {
               const textarea = document.getElementById('text');
@@ -69,14 +94,14 @@ image-rendering: pixelated;
           if (matched) {
             const img = document.createElement('img');
             img.src = "ys/" + encodeURIComponent(matched) + ".png";
-            img.width = 50;
+            img.width = 64;
             img.alt = matched;
             const result = img.src;
             container.appendChild(img);
             i += matched.length;
           } else {
-              const h2 = document.createElement("h2");
-              h2.className = 'unknown';
+              const h2 = document.createElement("h3");
+              h2.className = 'MISSINGNO';
               h2.textContent = str[i];
               container.appendChild(h2);
               i += 1;
@@ -84,7 +109,7 @@ image-rendering: pixelated;
         }
     }
     </script>
-    <a href="https://github.com/ytggobs/ytggobswebsite/raw/refs/heads/master/yb/ya3.0.ttf">Font available to download</a> <a href="https://benpa.ng/bited/">(maded with bited)</a>
+    <div class="download"><a href="https://github.com/ytggobs/ytggobswebsite/raw/refs/heads/master/yb/ya3.0.ttf">Font available to download</a> <a href="https://benpa.ng/bited/">(maded with bited)</a></div>
 </body>
 <footer><a href="https://sites.google.com/view/yoshilingo">Credit: Yoshilingo</a></footer>
 </html>
