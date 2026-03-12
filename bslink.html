@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+    <script>
+        // Function to get query parameter value
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Wait for the page to load
+        window.onload = function() {
+            // Get the 'redirect' query parameter
+            const redirectValue = getQueryParameter('redirect');
+            
+            // If the 'redirect' parameter is present
+            if (redirectValue) {
+                // Redirect to the Brawl Stars custom URL scheme
+                window.location.href = 'brawlstars://' + redirectValue;
+                
+                // Wait for 2 seconds before redirecting to Discord
+                setTimeout(function() {
+                    window.location.href = "discord://-/";
+                }, 2000); // Adjust the timeout value if needed
+            } else {
+                console.log('No redirect parameter found.');
+            }
+        };
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
