@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="./style.css">
-    <title>Romanized Yoshiādo Beta to Yoshiādo Beta</title>
+    <title>Romanized Yoshiàdo Beta to Yoshiàdo Beta</title>
     <style>
         body{
         image-rendering: pixelated;
@@ -48,7 +48,7 @@
         <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="hbct.html">Homebrew Channel Minecraft Theme</a></li>
-        <li><a href="ya.html">Romanized YĀ to Yoshiādo</a></li>
+        <li><a href="ya.html">Romanized YÀ to Yoshiàdo</a></li>
     </ul>
     </header>
     <div class="content">
@@ -61,14 +61,14 @@
     <img src="ys/--.png" width="64"></li>
     </ul>
     <img class="alphabet" width="25%" src="./ys/alphabet.png">
-    <textarea placeholder="yoshiādo" id="text"></textarea>
+    <textarea placeholder="yoshiàdo" id="text"></textarea>
     <br>
-    <p>Yoshiādo:</p>
+    <p>Yoshiàdo:</p>
     <div id="result" class="result">
     </div>
     </div>
      <script>
-        const TOKENS = [ "!", "'", "a", "ahh", "ap", "bal1", "bal2", "bal3", "bal4", "--", "bu", "da", "dae", "de", "do", ".", "dæ", "e", "em", "f", "fa", "gya", "gyu", "h", "ha", "hom", "i", "j", "k", "ka", "ke", "l", "m", "n", "o", "ohh", "oup", "pu", "qm", "r", "s", "shi", " ", "t", "un", "yee", "yoshi", "z", "zh", "à", "æ", "è", "ô", "ā", "ē"];
+        const TOKENS = [ "!", "'", "a", "ahh", "ap", "bal1", "bal2", "bal3", "bal4", "--", "bu", "da", "dae", "de", "do", ".", "dæ", "e", "em", "f", "fa", "gya", "gyu", "h", "ha", "hom", "i", "j", "k", "ka", "ke", "l", "m", "n", "o", "ohh", "oup", "pu", "qm", "r", "s", "shi", " ", "t", "un", "yci", "yoshi", "z", "zh", "à", "æ", "cc", "è", "ô", "co", "ca", "ce"];
         const TOKENS_SORTED = TOKENS.slice().sort((a, b) => b.length - a.length);
         document.addEventListener('DOMContentLoaded', () => {
               const textarea = document.getElementById('text');
@@ -113,7 +113,6 @@
 </body>
 <footer><a href="https://sites.google.com/view/yoshilingo">Credit: Yoshilingo</a></footer>
 </html>
-
 
 
 
