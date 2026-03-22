@@ -57,8 +57,8 @@
     <img src="ys/un.png" width="64"></li>
     <li><p>qm = </p><p>Question Mark</p>
     <img src="ys/qm.png" width="64"></li>
-    <li><p>-- = </p><p>Short Pause</p>
-    <img src="ys/--.png" width="64"></li>
+    <li><p>- = </p><p>Short Pause</p>
+    <img src="ys/-.png" width="64"></li>
     </ul>
     <img class="alphabet" width="25%" src="./ys/alphabet.png">
     <textarea placeholder="yoshiàdo" id="text"></textarea>
@@ -68,7 +68,7 @@
     </div>
     </div>
      <script>
-        const TOKENS = [ "!", "'", "a", "ahh", "ap", "bal1", "bal2", "bal3", "bal4", "--", "bu", "da", "dae", "de", "do", ".", "dæ", "e", "em", "f", "fa", "gya", "gyu", "h", "ha", "hom", "i", "j", "k", "ka", "ke", "l", "m", "n", "o", "ohh", "oup", "pu", "qm", "r", "s", "shi", " ", "t", "un", "yci", "yoshi", "z", "zh", "à", "æ", "cc", "è", "ô", "co", "ca", "ce"];
+        const TOKENS = [ "!", "'", "a", "ahh", "ap", "bal1", "bal2", "bal3", "bal4", "-", "bu", "da", "dae", "de", "do", ".", "dæ", "e", "em", "f", "fa", "gya", "gyu", "h", "ha", "hom", "i", "j", "k", "ka", "ke", "l", "m", "n", "o", "ohh", "oup", "pu", "qm", "r", "s", "shi", " ", "t", "un", "yci", "yoshi", "z", "zh", "à", "æ", "cc", "è", "ô", "co", "ca", "ce"];
         const TOKENS_SORTED = TOKENS.slice().sort((a, b) => b.length - a.length);
         document.addEventListener('DOMContentLoaded', () => {
               const textarea = document.getElementById('text');
