@@ -7,6 +7,6 @@ markdown: kramdown
 theme: just-the-doc
 
 exclude:
-  - *.html
-  - *.css
+  - "*.html"
+  - "*.css"
   - README.md
