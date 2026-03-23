@@ -1,3 +1,12 @@
+title: ytggobs's website
+description: Website for ytggobs's projects 
+author: ytggobs
+url: https://ytggobs.netlify.app/
+
 markdown: kramdown
-kramdown:
-  input: GFM
+theme: just-the-doc
+
+exclude:
+  - *.html
+  - *.css
+  - README.md
